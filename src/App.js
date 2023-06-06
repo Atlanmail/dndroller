@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from './Button';
+import Button from './Components/Button.js';
+import * as DiceRoller from './Components/DiceRoller.js'
 import './App.css'
 const App = () => {
   const handleClick = () => {
@@ -9,7 +10,7 @@ const App = () => {
   return (
     <div>
       <h1>My App</h1>
-      <Button text="Click me" onClick={handleClick} />
+      <Button text="Click me" onClick={DiceRoller.isValidDicestring} />
     </div>
   );
 };

@@ -10,7 +10,7 @@ const roll = (diceSize) => {
  * checks if string contains 
  */
 
-const isValidDicestring = (input) => {
+export function isValidDicestring (input) {
     input.replace(/\s/g,'');
     let result = input.split(/[+-]/);
     console.log(result);
