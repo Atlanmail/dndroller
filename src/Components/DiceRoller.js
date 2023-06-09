@@ -11,10 +11,7 @@ function containsOnlyAllowedValues(str) {
     return regexPattern.test(str);
 }
 
-function containsCharD(str) {
-    const regexPattern = new RegExp(`/d/`);
-    return regexPattern.test(str);
-} 
+
 /**
  * 
  * @param {string} input 
@@ -62,40 +59,38 @@ export function isValidDicestring (input) {
 
 export function parseRoll(input) {
     if (isValidDicestring(input) == false) {
-        return -1;
-      }
-    
-      var output = 0;
-      input = input.replaceAll(/\s/g, '');
-    
-      const result = input.split(/[+-]/);
-      console.log(result);
-    
-      for (const value of result) {
+        return -1
+    }
+    var output = 0;
+    input = input.replaceAll(/\s/g,'');
+
+    const result = input.split(/[+-]/);
+    console.log(result)
+    for (const value of result) {
         var toAdd = 0;
-    
-        if (containsCharD(value) == false) {
-          console.log("Doesn't contain D");
-          output += parseInt(value);
-          continue;
+
+        if (value.includes("d") == false) {
+            console.log("Doesn't contains d")
+            output += parseInt(value)
+            
+            continue;
         }
-    
+
         const splitValue = value.split(/[d]/);
-        console.log(splitValue);
-    
-        if (splitValue.length === 1) {
-          // No number of dice rolls specified, default to 1
-          toAdd += roll(splitValue[0]);
-        } else {
-          for (var i = 0; i < splitValue[0]; i++) {
-            toAdd += roll(splitValue[1]);
-          }
+        //console.log(splitValue)
+
+        if (splitValue[0].length == 0) {
+            toAdd += roll(splitValue[0]);    
         }
-    
+        else {
+            for (var i = 0 ; i < splitValue[0] ; i++) {
+                toAdd += roll(splitValue[1]);
+            }
+        }
         output += toAdd;
-        console.log(output);
-      }
-    
-      return output;
+        ///console.log(output);
+    }
+
+    return output;
 
 }
