@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Components/Button.js';
 import * as DiceRoller from './Components/DiceRoller.js'
 import './App.css'
+import EditableButton from './Components/EditableButton.js';
 const App = () => {
   const handleClick = () => {
     console.log('Button clicked!');
@@ -10,7 +11,7 @@ const App = () => {
   return (
     <div>
       <h1>My App</h1>
-      <Button text="Click me" onClick={DiceRoller.isValidDicestring} />
+      <EditableButton initialText={"Hello world"}/>
     </div>
   );
 };

@@ -1,0 +1,29 @@
+.big-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .big-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    font-size: 18px;
+  }
+  
+  .small-button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .small-button {
+    width: 10px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  
+  .input-field {
+    margin-left: 10px;
+  }
