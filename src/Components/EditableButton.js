@@ -4,18 +4,30 @@ import './EditableButton.css'
 const EditableButton = ({ initialText }) => {
   const [text, setText] = useState(initialText);
 
-  const handleButtonClick = () => {
-    console.log("Button clicked!")
+  const handleButtonClick = (event) => {
+    ///console.log(event.target.className);
+    ///console.log(text)
+
+    if (event.target.className == "button") {
+
+    }
+    else {
+        console.log("editing")
+    }
   };
 
   const handleTextChange = (event) => {
-    setText(event.target.value);
+    
+    const textToChange = event.target.value;
+    setText(textToChange);
   };
 
   return (
-    <div>
-      <input className = "button" type="text" value={text} onChange={handleTextChange} />
-      <button onClick={handleButtonClick}>Click me</button>
+    <div className="editable-button-container">
+        <button className="button" onClick={handleButtonClick} data="button">
+            <input type="text" value={text} onChange={handleTextChange} className="text" data = "text"/>
+            
+        </button>
     </div>
   );
 };
