@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
       <h1>My App</h1>
-      <EditableButton initialText={"Hello world"}/>
+      <EditableButton initialText={"d4+2"}/>
     </div>
   );
 };
